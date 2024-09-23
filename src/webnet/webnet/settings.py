@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CSRF_TRUSTED_ORIGINS=["https://webnet.neolant.com"]
 ROOT_URLCONF = 'webnet.urls'
 
 TEMPLATES = [
