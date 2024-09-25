@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import LoginForm
-from django.contrib.auth import login, authenticate
+from django.contrib import auth
 
 
 # Create your views here.
@@ -13,9 +13,9 @@ def login(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             next = form.cleaned_data.get('next')
-            user = authenticate(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
             if user is not None:
-                login(request, user)
+                auth.login(request, user)
                 return redirect(next)
     else:
         form = LoginForm()
