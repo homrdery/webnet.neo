@@ -132,4 +132,4 @@ STATIC_ROOT = Path(BASE_DIR).parent.joinpath("static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CRISPY_TEMPLATE_PACK="bootetrap4"
+CRISPY_TEMPLATE_PACK="bootstrap4"
