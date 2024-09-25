@@ -17,7 +17,7 @@ def login(request):
             if user is not None:
                 login(request, user)
                 return redirect(next)
-        else:
-            form = LoginForm()
+    else:
+        form = LoginForm()
 
     return render(request, "accounts/login.html", context={"form": form})
