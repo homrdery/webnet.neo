@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vl@rl$2-clcjqj(%(7)#ko8d4q(y=_*gss&(i1$t&@f-wzzq^-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['webnet.neolant.com', 'webnet.loc']
+ALLOWED_HOSTS = ['webnet.neolant.com', 'webnet.loc', '192.145.97.111']
 
 
 # Application definition
