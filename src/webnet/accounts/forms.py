@@ -1,6 +1,6 @@
 from django import forms
-from crispy_forms.helper import FormHelper, Submit
-
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout  import Submit
 
 class LoginForm(forms.Form):
     username = forms.CharField(label="Логин", required=True)
