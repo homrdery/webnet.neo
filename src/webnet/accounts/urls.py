@@ -3,6 +3,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    path('', views.loggin),
+    path('login', views.login),
 
 ]
