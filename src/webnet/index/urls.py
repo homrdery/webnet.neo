@@ -4,5 +4,5 @@ import rest
 from index import views
 
 urlpatterns = [
-    path('/', views.index),
+    path('', views.index),
 ]
