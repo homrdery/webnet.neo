@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['webnet.neolant.com','webnet.loc']
 INSTALLED_APPS = [
     "index",
     "fontawesomefree",
+    "crispy_forms",
+    "crispy_bootstrap4",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
