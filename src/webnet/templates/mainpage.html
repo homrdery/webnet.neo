@@ -16,6 +16,7 @@
     <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
   </head>
   <body>
+  {% block mainbody %}
     <div class="container">
 
       <header class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
@@ -63,6 +64,7 @@
     {% block JSscripts%}
     <script> let table = new DataTable('#myTable'); </script>
     <script> let table = new DataTable('#myTableworkers'); </script>
+    {% endblock %}
     {% endblock %}
   </body>
 </html>
