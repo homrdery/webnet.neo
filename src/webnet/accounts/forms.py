@@ -7,9 +7,7 @@ class LoginForm(forms.Form):
     password = forms.CharField("Пароль")
     next = forms.CharField("Логин")
 
-   def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-
-
