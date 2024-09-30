@@ -6,16 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block titleOut %}<title>{% block titleIn %}Webmet{% endblock %}</title>{% endblock %}
+    {% block headers %}
+      <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/static/main/css/main.css" rel="stylesheet">
+      <link href="/static/bootstrap/js/bootstrap.bundle.min.js">
+      <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
+    {% endblock %}
     {% block extra_headers %}{% endblock %}
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/main/css/main.css" rel="stylesheet">
-    <link href="/static/main/css/main.css" rel="stylesheet">
-    <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
-
   </head>
   <body>
-  {% block basebody %}
-
-  {% endblock %}
+    {% block body %}
+      {% block head %}
+      {% block js %}
+        <script type="text/javascript" charset="utf8" src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+      {% endblock %}
+    {% endblock %}
   </body>
 </html>
