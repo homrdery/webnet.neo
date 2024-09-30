@@ -6,7 +6,7 @@ from django.contrib import auth
 # Create your views here.
 def register(request):
     if request.method=="POST":
-
+        pass
 def login(request):
 
     if request.method == "POST":
