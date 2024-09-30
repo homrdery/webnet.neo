@@ -11,7 +11,7 @@ def register(request):
             form.save()
             return redirect("/")
         else:
-            messages.add_message(request, messages.ERROR, f"Ошибка {form.errors}")
+            messages.add_message(request, messages.ERROR, f"Ошибка создания пользователя")
     else:
         form = RegForm()
     return render(request, "accounts/reg.html", context={"form": form})
