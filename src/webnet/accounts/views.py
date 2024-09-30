@@ -9,7 +9,14 @@ def register(request):
         form = RegForm(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                auth.login(request, user)
+            else: messages.add_message(request, messages.ERROR, f"Ошибка username не коректный")
             return redirect("/")
+
         else:
             messages.add_message(request, messages.ERROR, f"Ошибка создания пользователя")
     else:
