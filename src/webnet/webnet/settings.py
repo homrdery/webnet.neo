@@ -57,6 +57,7 @@ MIDDLEWARE = [
 ]
 CSRF_TRUSTED_ORIGINS=["https://webnet.neolant.com"]
 ROOT_URLCONF = 'webnet.urls'
+# LOGIN_REDIRECT_URL = "/"
 
 TEMPLATES = [
     {
