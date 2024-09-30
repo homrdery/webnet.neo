@@ -11,10 +11,12 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
-            user = auth.authenticate(username=username, password=password)
+            user = auth.authenticate(username=username, password=password+"x")
             if user is not None:
                 auth.login(request, user)
-            else: messages.add_message(request, messages.ERROR, f"Ошибка username не коректный")
+            else:
+                messages.add_message(request, messages.ERROR, f"Ошибка Логина введите вручную")
+                redirect("accounts/login/")
             return redirect("/")
 
         else:
