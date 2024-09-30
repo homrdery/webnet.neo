@@ -1,9 +1,11 @@
-{% extends "mainpage.html" %}
+{% extends "Basepage.html" %}
 {% load crispy_forms_tags %}
 
-{% block mainbody %}
-    <div class="container">
-        <h1 align="center" align="center">register</h1>
-        {% crispy form %}
-    </div>
+{% block navheader %}
+{% endblock %}
+{% block content %}
+    <h1 align="center" align="center">login</h1>
+    {% crispy form %}
+{% endblock %}
+{% block footer %}
 {% endblock %}
