@@ -16,6 +16,11 @@ class LoginForm(forms.Form):
 
 class RegForm(UserCreationForm):
     email = forms.EmailField()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
     def save (self, commit=True):
         user = super(RegForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
