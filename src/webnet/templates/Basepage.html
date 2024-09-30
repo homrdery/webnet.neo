@@ -26,7 +26,11 @@
         {% block messages %}
             {% include 'mainsrc/ermessages.html' %}
         {% endblock %}
+      <div class="row">
+        <div class="col">
         {% block content %}HI{% endblock %}
+        </div>
+      </div>
         {% block footer %}
             {% include 'mainsrc/footer.html' %}
         {% endblock %}
