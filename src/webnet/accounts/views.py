@@ -12,7 +12,8 @@ def register(request):
             return redirect("/")
         else:
             messages.add_message(request, messages.ERROR, f"Ошибка {form.errors}")
-    form = RegForm()
+    else:
+        form = RegForm()
     return render(request, "accounts/reg.html", context={"form": form})
 def login(request):
 
