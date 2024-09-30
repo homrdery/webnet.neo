@@ -22,7 +22,7 @@ class RegForm(UserCreationForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('cancel', 'Cancel', css_class='btn-danger',  formnovalidate='formnovalidate',))
-        self.helper.add_input(Button('cancel', 'Cancel', on_click='this.form.reset()'))
+        self.helper.add_input(Button('reset', 'Reset'))
         self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
 
     def save (self, commit=True):
