@@ -4,15 +4,15 @@ from django.contrib import auth, messages
 from django.contrib.auth import login
 
 # Create your views here.
-def register(request):
-    if request.method=="POST":
-        form = RegForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-            return redirect("/")
-    form = RegForm()
-    return render(request, "accounts/reg.html", context={"form": form})
+# def register(request):
+#     if request.method=="POST":
+#         form = RegForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#             return redirect("/")
+#     form = RegForm()
+#     return render(request, "accounts/reg.html", context={"form": form})
 def login(request):
 
     if request.method == "POST":
