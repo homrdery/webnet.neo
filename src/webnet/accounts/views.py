@@ -11,7 +11,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
-            user = auth.authenticate(username=username, password=password+"x")
+            user = auth.authenticate(username=username, password=password)
             if user is not None:
                 auth.login(request, user)
             else:
