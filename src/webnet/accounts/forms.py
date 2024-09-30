@@ -1,6 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout  import Submit
+from crispy_forms.layout  import Submit, Button
+from crispy_forms.bootstrap import FormActions
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 class LoginForm(forms.Form):
@@ -20,7 +21,9 @@ class RegForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
+        self.helper.add_input(Button('cancel', 'Cancel'))
         self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
+
     def save (self, commit=True):
         user = super(RegForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
