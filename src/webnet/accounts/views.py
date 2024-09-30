@@ -1,12 +1,19 @@
 from django.shortcuts import render,redirect
-from .forms import LoginForm
-from django.contrib import auth
-
+from .forms import LoginForm, RegForm
+from django.contrib import auth, messages
+from django.contrib.auth import login
 
 # Create your views here.
 def register(request):
     if request.method=="POST":
-        pass
+        form = RegForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            next = form.cleaned_data.get('next')
+            login(request, user)
+            return redirect(next)
+    form = RegForm()
+    return render(request, "accounts/reg.html", context={"form": form})
 def login(request):
 
     if request.method == "POST":
