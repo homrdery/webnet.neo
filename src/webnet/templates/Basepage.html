@@ -3,10 +3,12 @@
 
 <html lang="ru" xmlns="http://www.w3.org/1999/html">
   <head>
+    {% block meta %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
     {% block titleOut %}<title>{% block titleIn %}Webmet{% endblock %}</title>{% endblock %}
-    {% block headers %}
+    {% block stylesheets %}
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/main/css/main.css" rel="stylesheet">
     <link href="/static/bootstrap/js/bootstrap.bundle.min.js">
@@ -16,13 +18,25 @@
     {% endblock %}
   </head>
   <body>
-    {% block body %}
-      {% block head %}
-        {% block js %}
-          <script type="text/javascript" charset="utf8" src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
-          <script type="text/javascript" charset="utf8" src="/static/jquery/jquery.min.js"></script>
+    <div class="container">
+      {% block body %}
+        {% block navheader %}
+          {% include 'mainsrc/navbar.html' %}
         {% endblock %}
+        {% block messages %}
+            {% include 'mainsrc/ermessages.html' %}
+        {% endblock %}
+        {% block content %}HI{% endblock %}
+        {% block footer %}
+            {% include 'mainsrc/footer.html' %}
+        {% endblock %}
+          {% block js %}
+            <script type="text/javascript" charset="utf8" src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript" charset="utf8" src="/static/jquery/jquery.min.js"></script>
+          {% endblock %}
+          {% extra js %}
+          {% endblock %}
       {% endblock %}
-    {% endblock %}
+    </div>
   </body>
 </html>
