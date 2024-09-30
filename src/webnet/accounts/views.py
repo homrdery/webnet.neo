@@ -2,10 +2,11 @@ from django.shortcuts import render,redirect
 from .forms import LoginForm, RegForm
 from django.contrib import auth, messages
 from django.contrib.auth import login
-
+from .decarators import anonymous_required
 # Create your views here.
+@anonymous_required
 def register(request):
-    if request.method=="POST":
+    if request.method == "POST":
         form = RegForm(request.POST)
         if form.is_valid():
             form.save()
