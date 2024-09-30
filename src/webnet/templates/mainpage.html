@@ -1,70 +1,45 @@
-{% load static %}
-<!DOCTYPE html>
-
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Webmet{% endblock %}</title>
+{% extends "Basepage.html" %}
+    {% block titleOut %}<title>{% block titleIn %}Webmet{% endblock %}</title>{% endblock %}
     {% block extra_headers %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/datatables/buttons.dataTables.min.css">
-    <link href="/static/datatables/dataTables.dataTables.min.css" rel="stylesheet">
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/main/css/main.css" rel="stylesheet">
-    <link href="/static/main/css/main.css" rel="stylesheet">
-    <link href="/static/datatables/ru.json" rel="stylesheet">
-    <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
-  </head>
-  <body>
-  {% block mainbody %}
-    <div class="container">
+  {% block basebody %}
+    {% block mainbody %}
+      <div class="container">
+        <header class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">Webnet</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <header class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Webnet</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/logs.html">Логи</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Addr.html">Адреса</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Справочники</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="/directory/addr">Справочник адресов</a>
-            <a class="dropdown-item" href="#">Ещё какой-то справочник</a>
-            <a class="dropdown-item" href="#">Ещё какой-то справочник</a>
-            </div>
-          </li>
-
-
-        </ul>
-
-      </div>
-      </header>
-
-    <main role="main">
-      {% block body %}HI{% endblock %}
-<!--    <footer class="">-->
-    <footer class="fixed-bottom">
-      <div class="container mb-1" align="center">
-        footer
-      </div>
-    </footer>
-    <script src="{% static 'jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %} "></script>
-    <script src="{% static 'datatables/dataTables.min.js' %}"></script>
-      <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.buttons.min.js"></script>
-      <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
-    {% block JSscripts%}
-    <script> let table = new DataTable('#myTable'); </script>
-    <script> let table = new DataTable('#myTableworkers'); </script>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/logs.html">Логи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Addr.html">Адреса</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Справочники</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/directory/addr">Справочник адресов</a>
+              <a class="dropdown-item" href="#">Ещё какой-то справочник</a>
+              <a class="dropdown-item" href="#">Ещё какой-то справочник</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        </header>
+      <main role="main">
+        {% block content %}HI{% endblock %}
+  <!--    <footer class="">-->
+      <footer class="fixed-bottom">
+        <div class="container mb-1" align="center">
+          footer
+        </div>
+      </footer>
+      {% block JSscripts%}
+      {% block MyJSscripts%}
+      {% endblock %}
+      {% endblock %}
+      {% endblock %}
     {% endblock %}
-    {% endblock %}
-  </body>
-</html>

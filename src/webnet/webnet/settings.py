@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['webnet.neolant.com','webnet.loc']
 
 INSTALLED_APPS = [
     "index",
+    "accounts",
+    "tester",
     "fontawesomefree",
     "crispy_forms",
     "crispy_bootstrap4",
