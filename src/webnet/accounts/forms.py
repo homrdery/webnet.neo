@@ -15,17 +15,13 @@ class LoginForm(forms.Form):
         self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
 
 class RegForm(UserCreationForm):
-
-    email = forms.EmailField(label="Почта", required=True)
-
-
-
+    email = forms.EmailField()
     class Meta:
-        model =User
-        Fields = ("username", "password", "email")
-    def save (self, commit=True):
-        user = super(RegForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
+        model = User
+        Fields = ("username", "email", "password1", "password2")
+    # def save (self, commit=True):
+    #     user = super(RegForm, self).save(commit=False)
+    #     user.email = self.cleaned_data['email']
+    #     if commit:
+    #         user.save()
+    #     return user
