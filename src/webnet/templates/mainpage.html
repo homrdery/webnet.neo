@@ -38,8 +38,15 @@
         </div>
       </footer>
       {% block JSscripts%}
-      {% block MyJSscripts%}
+        <script src="{% static 'jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+        <script src="{% static 'datatables/dataTables.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
       {% endblock %}
+      {% block MyJSscripts%}
+        <script> let table = new DataTable('#myTable'); </script>
+        <script> let table = new DataTable('#myTableworkers'); </script>
       {% endblock %}
       {% endblock %}
     {% endblock %}
