@@ -8,10 +8,9 @@ def register(request):
     if request.method=="POST":
         form = RegForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            next = form.cleaned_data.get('next')
-            login(request, user)
-            return redirect(next)
+            form.save()
+
+            return redirect("/")
     form = RegForm()
     return render(request, "accounts/reg.html", context={"form": form})
 def login(request):
