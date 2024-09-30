@@ -1,5 +1,6 @@
 {% extends "mainpage.html" %}
 {% load static%}
+    {% block titleOut %}<title>{% block titleIn %}TEST101{% endblock %}</title>{% endblock %}
 
 {% block extra_headers %}
     <link rel="stylesheet" type="text/css" href="/static/datatables/buttons.dataTables.min.css">
