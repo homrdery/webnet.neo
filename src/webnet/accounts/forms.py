@@ -1,6 +1,6 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout  import Submit, Button
+from crispy_forms.layout  import Submit, Button, Reset
 from crispy_forms.bootstrap import FormActions
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -22,7 +22,7 @@ class RegForm(UserCreationForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         # self.helper.add_input(Submit('cancel', 'Cancel', css_class='btn-danger',  formnovalidate='formnovalidate',))
-        self.helper.add_input(Button('reset', 'Reset'))
+        self.helper.add_input(Reset('reset', 'Reset'))
         self.helper.add_input(Submit('submit', 'Submit', css_class='btn-primary'))
 
     def save (self, commit=True):
