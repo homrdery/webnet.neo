@@ -31,9 +31,11 @@
           {% endblock %}
         </div>
       </div>
+      {% block outcontent %}
      <div class="row d-flex h-100">
-        {% block content %}HI{% endblock %}
+        {% block incontent %}HI{% endblock %}
      </div>
+      {% endblock %}
         {% block footer %}
             {% include 'mainsrc/footer.html' %}
         {% endblock %}
