@@ -26,7 +26,6 @@ def register(request):
         form = RegForm()
     return render(request, "accounts/reg.html", context={"form": form})
 def login(request):
-
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
