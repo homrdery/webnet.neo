@@ -10,4 +10,5 @@ class dirAddr(models.Model):
         verbose_name = "Работник"
         verbose_name_plural = "Работники"
 
+
 # Create your models here.
