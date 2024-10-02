@@ -39,7 +39,7 @@ def login(request):
             else:
                 messages.add_message(request, messages.ERROR, f"Ошибка аунтификации")
         else:
-            messages.add_message(request, messages.ERROR, f"Ошибка пользователь не найден")
+            messages.add_message(request, messages.ERROR, f"Ошибка данные не валидны")
     else:
         form = LoginForm()
 
