@@ -25,13 +25,15 @@
         {% endblock %}
 
       <div class="row">
-        <div class="col">
+        <div class="col col-12">
           {% block messages %}
             {% include 'mainsrc/ermessages.html' %}
           {% endblock %}
-          {% block content %}HI{% endblock %}
         </div>
       </div>
+     <div class="row">
+        {% block content %}HI{% endblock %}
+    </div>
         {% block footer %}
             {% include 'mainsrc/footer.html' %}
         {% endblock %}
