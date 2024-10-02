@@ -24,13 +24,15 @@
           {% include 'mainsrc/navbar.html' %}
         {% endblock %}
 
-      <div class="row">
-        <div class="col col-12">
+
           {% block messages %}
-            {% include 'mainsrc/ermessages.html' %}
+            <div class="row">
+              <div class="col col-12">
+                {% include 'mainsrc/ermessages.html' %}
+              </div>
+            </div>
           {% endblock %}
-        </div>
-      </div>
+
       {% block outcontent %}
      <div class="row d-flex h-100">
         {% block incontent %}HI{% endblock %}
