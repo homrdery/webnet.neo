@@ -1,0 +1,30 @@
+<p>Неолант</p>
+    <button onclick='getform();'>Добавить</button>
+
+    <table width="80%" border="1" id="myTable">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>MAC адрес</th>
+        <th>Данные</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for name in names %}
+        <tr align="center" id="{{name.id}}">
+            <td  align="right">
+                {{name.name}}
+            </td>
+            <td>
+                {{name.mac_addr}}
+            </td>
+            <td>
+                {{name.data}}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script> let table = new DataTable('#myTable'); </script>
+<script type="text/javascript" charset="utf8" src="/static/Index/JSscripts/ScriptsForIndex.js"></script>
