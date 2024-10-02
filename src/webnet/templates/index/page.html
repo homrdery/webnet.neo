@@ -5,8 +5,10 @@
     <h1 align="center">Домашняя страница</h1>
     <h5 align="center"> Здраствуйте {{user.username}} </h5>
 {% else %}
-    <div class="container">
-        <div class="row h-100 justify-content-center align-item-center">Для доступа к сайту <a href="/accounts/login/">зайдите в аккаунт</a></div>
+    <div class="row h-100">
+        <div class="container">
+            <div class="justify-content-center align-item-center">Для доступа к сайту <a href="/accounts/login/">зайдите в аккаунт</a></div>
+        </div>
     </div>
 {% endif %}
 {% endblock %}
