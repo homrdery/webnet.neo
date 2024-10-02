@@ -10,6 +10,8 @@
     {% block titleOut %}<title>{% block titleIn %}Webmet{% endblock %}</title>{% endblock %}
     {% block stylesheets %}
     <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/datatables/buttons.dataTables.min.css">
+    <link href="/static/datatables/dataTables.dataTables.min.css" rel="stylesheet">
     <link href="/static/main/css/main.css" rel="stylesheet">
     <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
     {% endblock %}
@@ -48,6 +50,7 @@
             <script type="text/javascript" charset="utf8" src="/static/Index/JSscripts/ScriptsForDir.js"></script>
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.buttons.min.js"></script>
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
+            <script>>
             <script>
               $(document).ready(function(){
                 let table = new DataTable('#myTable');
