@@ -37,9 +37,9 @@ def login(request):
                 auth.login(request, user)
                 return redirect(next)
             else:
-                messages.add_message(request, messages.ERROR, f"Ошибка аунтификации")
+                messages.add_message(request, messages.ERROR, f"Ошибка аунтификации {form.errors}")
         else:
-            messages.add_message(request, messages.ERROR, f"Ошибка данные не валидны")
+            messages.add_message(request, messages.ERROR, f"Ошибка данные не валидны {form.errors}")
     else:
         form = LoginForm()
 
