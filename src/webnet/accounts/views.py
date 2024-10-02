@@ -36,6 +36,8 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 return redirect(next)
+            else:
+                messages.add_message(request, messages.ERROR, f"Ошибка аунтификации")
         else:
             messages.add_message(request, messages.ERROR, f"Ошибка пользователь не найден")
     else:
