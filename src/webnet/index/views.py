@@ -5,6 +5,5 @@ from django.contrib import messages
 
 
 def index(request):
-    messages.add_message(request, messages.INFO, "Hello world.")
     return render(request, 'index/page.html')
 
