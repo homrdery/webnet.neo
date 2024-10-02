@@ -4,8 +4,6 @@
 
 {% if user.is_authenticated %}
 <div class="col col-12">
-    <h1 align="center">Домашняя страница</h1>
-    <h5 align="center"> Здраствуйте {{user.username}} </h5>
     {% include 'tables/addr.html' %}
 </div>
 {% else %}
