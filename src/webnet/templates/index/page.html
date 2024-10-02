@@ -1,9 +1,11 @@
 {% extends "Basepage.html" %}
 {% block content %}
-<h1 align="center">Домашняя страница</h1>
+
 {% if user.is_authenticated %}
+    <h1 align="center">Домашняя страница</h1>
     <h5 align="center"> Здраствуйте {{user.username}} </h5>
 {% else %}
+
     <h5 align="center">для доступа к сайту зайдите в аккаунт</h5>
 {% endif %}
 {% endblock %}
