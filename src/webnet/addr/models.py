@@ -51,7 +51,7 @@ class PktRecordLogManager(models.Manager):
         for obj in objs:
             mac_addr = obj.data["hwsrc"]
             ip_addr = obj.data["psrc"]
-            time = obj, time
+            time = obj.time
             rec, created = Pktreader.objects.get_or_create(mac_addr=mac_addr)
             rec.time = time
             rec.ip_addr = ip_addr
