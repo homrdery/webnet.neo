@@ -56,17 +56,17 @@ def getform(request):
         action = request.GET.get("action")
         if action == "subAddr":
             form = addFormAddr()
-        # if action == "delAddr":
-        #     id = request.GET.get("id", False)
-        #     if id:
-        #         obj = dirAddr.objects.get(id=id)
-        #         form = delFormAddr(instance=obj)
-        # if action == "reAddr":
-        #     id = request.GET.get("id", False)
-        #     # name = request.GET.get('name', False)
-        #     if id:
-        #         obj = dirAddr.objects.get(id=id)
-        #         form = reFormAddr(instance=obj)
+        if action == "delAddr":
+            id = request.GET.get("id", False)
+            if id:
+                obj = dirAddr.objects.get(id=id)
+                form = delFormAddr(instance=obj)
+        if action == "reAddr":
+            id = request.GET.get("id", False)
+            # name = request.GET.get('name', False)
+            if id:
+                obj = dirAddr.objects.get(id=id)
+                form = reFormAddr(instance=obj)
 
     params = {
         "form": form,
