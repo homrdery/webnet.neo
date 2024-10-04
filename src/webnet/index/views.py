@@ -12,9 +12,11 @@ logger = logging.getLogger(APPNAME)
 
 
 def index(request):
-    from addr.models import PktRecordLog
-    PktRecordLog.objects.compute()
-    return render(request, 'index/page.html')
+    # from addr.models import PktRecordLog
+    # PktRecordLog.objects.compute()
+    from addr.models import Pktreader
+    items = Pktreader.objects.all()
+    return render(request, 'index/page.html', {"items" : items})
 
 
 def addr(request):

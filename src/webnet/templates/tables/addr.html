@@ -10,16 +10,16 @@
     </tr>
     </thead>
     <tbody>
-    {% for name in names %}
-        <tr align="center" id="{{name.id}}">
+    {% for item in items %}
+        <tr align="center" id="{{item.id}}">
             <td  align="right">
-                {{name.name}}
+                {{item.time}}
             </td>
             <td>
-                {{name.mac_addr}}
+                {{item.mac_addr}}
             </td>
             <td>
-                {{name.data}}
+                {{item.ip_addr}}
             </td>
         </tr>
     {% endfor %}
