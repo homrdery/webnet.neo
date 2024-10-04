@@ -74,4 +74,4 @@ def getform(request):
     params = {
         "form": form,
     }
-    return render(request, "directory/ForForms/addForm.html", params)
+    return render(request, "index/ForForms/addForm.html", params)
