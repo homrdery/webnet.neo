@@ -1,5 +1,5 @@
 function getform () {
-        $('#Form').load('addr/getform.html?action=subAddr', function(responseTxt, statusTxt, jqXHR)
+        $('#Form').load('/getform.html?action=subAddr', function(responseTxt, statusTxt, jqXHR)
             {
                 if(statusTxt == 'success'){
                         $('#addForm').modal();
