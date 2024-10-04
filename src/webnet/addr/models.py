@@ -37,9 +37,9 @@ class PktreaderManager(models.Manager):
         result = []
         for obj in self.order_by("time"):
             name = ""
-            obj_name = dirAddr.objects.get(mac_addr=obj.mac_adr)
+            obj_name = dirAddr.objects.get(mac_addr=obj.mac_addr)
             try:
-                obj_name = dirAddr.objects.get(mac_addr=obj.mac_adr)
+                obj_name = dirAddr.objects.get(mac_addr=obj.mac_addr)
                 name = obj_name.name
             except:
                 pass
