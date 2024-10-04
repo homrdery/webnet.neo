@@ -47,14 +47,10 @@ class Pktreader(models.Model):
 
 class PktRecordLogManager(models.Manager):
     def compute(self):
-        objs = self.filter(type=1).order_by("time")
-        for obj in objs:
-            mac_addr = obj.data["hwsrc"]
-            ip_addr = obj.data["psrc"]
-            time = obj.time
-            rec, created = Pktreader.objects.get_or_create(mac_addr=mac_addr)
-            rec.time = time
-            rec.ip_addr = ip_addr
+        for obj in self.filter(type=1).order_by("time"):
+            rec, created = Pktreader.objects.get_or_create(mac_addr=obj.data["hwsrc"])
+            rec.time = obj.time
+            rec.ip_addr = obj.data["psrc"]
             rec.save()
 
 
