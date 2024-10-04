@@ -47,4 +47,4 @@ class addForm(forms.ModelForm):
 
     class Meta:
         model = worker
-        fields = ('name', 'mac_addr', 'data')
+        fields = ('name', 'mac_addr', 'ip_addr')
