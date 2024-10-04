@@ -15,6 +15,6 @@ class PktreaderAdmin(ModelAdmin):
 
 @register(worker)
 class WorkerAdmin(ModelAdmin):
-    list_display = ("name", "mac_addr", "data")
+    list_display = ("name", "mac_addr")
     search_fields = ('mac_addr', 'name')
     list_filter = ("mac_addr", )
