@@ -4,4 +4,7 @@ from index import views
 
 urlpatterns = [
     path('', views.index),
+    path('Addr.html', views.addr),
+    path('getform.html', views.getform),
+
 ]

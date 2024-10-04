@@ -51,7 +51,7 @@ def addr(request):
         "eror": error,
         "title": f"всего компов"
     }
-    return render(request, "directory/dirAddr.html", params)
+    return render(request, "tables/dirAddr.html", params)
 
 
 def getform(request):
