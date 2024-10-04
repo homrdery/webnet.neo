@@ -12,6 +12,8 @@ logger = logging.getLogger(APPNAME)
 
 
 def index(request):
+    from addr.models import PktRecordLog
+    PktRecordLog.objects.compute()
     return render(request, 'index/page.html')
 
 
