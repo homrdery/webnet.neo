@@ -1,5 +1,5 @@
 function getform () {
-        $('#Form').load('directory/getform.html?action=subAddr', function(responseTxt, statusTxt, jqXHR)
+        $('#Form').load('addr/getform.html?action=subAddr', function(responseTxt, statusTxt, jqXHR)
             {
                 if(statusTxt == 'success'){
                         $('#addForm').modal();
@@ -14,7 +14,7 @@ function getform () {
 function deladdr( e, dt, node, config )  {
         var id = $('#myTable').DataTable.$('tr.selected')[0].id;
         console.log('Выбран пользователь под id ='+id);
-        $("#Form").load("directory/getform.html?action=delAddr&id="+id, function(responseTxt, statusTxt, jqXHR)
+        $("#Form").load("addr/getform.html?action=delAddr&id="+id, function(responseTxt, statusTxt, jqXHR)
         {
             if(statusTxt == 'success'){
                     $('#addFormdel').modal();

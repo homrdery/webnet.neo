@@ -1,5 +1,5 @@
 from django import forms
-from .models import dirAddr
+from .models import dirAddr, worker, Pktreader
 from django.forms import HiddenInput, ChoiceField
 from crispy_forms.bootstrap import Modal
 from crispy_forms.helper import FormHelper
@@ -28,7 +28,7 @@ class addFormAddr(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.form_action = ''
-        self.helper.layout = Layout(Modal(Field('name'), Field('mac_addr'), Field('action'), Submit("submit", "Оправить", css_class='btn btn-primery float-end'),  css_id="addForm", title='Добавить новую запис
+        self.helper.layout = Layout(Modal(Field('name'), Field('mac_addr'), Field('action'), Submit("submit", "Оправить", css_class='btn btn-primery float-end'),  css_id="addForm", title='Добавить новую запись'))
 
     class Meta:
         model = dirAddr
