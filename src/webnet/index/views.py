@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from addr.models import dirAddr
-from addr.forms import addFormAddr
 from .forms import addForm
 import logging
 # from .forms import delFormAddr, reFormAddr,
@@ -40,8 +39,8 @@ def addr(request):
         #             logger.error(error)
         #     except dirAddr.DoesNotExist as e:
         #         logger.error(f"Не существует {id}")
-        if action == "subAddr":
-            form = addFormAddr(request.POST)
+        if action == "sub":
+            form = addForm(request.POST)
             if form.is_valid():
                 form.save()
             else:
@@ -56,7 +55,6 @@ def addr(request):
 
 
 def getform(request):
-    global form
     if request.method == 'GET':
         action = request.GET.get("action")
         if action == "sub":
