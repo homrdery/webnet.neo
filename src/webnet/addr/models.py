@@ -13,6 +13,8 @@ class dirAddr(models.Model):
 class worker(models.Model):
     mac_addr = models.CharField("mac_addr", max_length=32, null=False, unique=True, blank=False, help_text="mac адрес pc")
     ip_addr = models.CharField("ip_addr", max_length=30, null=False, blank=False, help_text="ip_addr pc")
+    name = models.CharField("mac_addr", max_length=32, null=False, unique=True, blank=False, help_text="name")
+    vendor = models.CharField("mac_addr", max_length=32, null=False, unique=True, blank=False, help_text="vendor")
     def __str__(self):
         return f"Работник {self.id}:{self.mac_addr}:{self.ip_addr}"
     class Meta:
