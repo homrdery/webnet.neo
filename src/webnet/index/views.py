@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from addr.models import dirAddr
 from addr.forms import addFormAddr
+from .forms import addForm
 import logging
 # from .forms import delFormAddr, reFormAddr,
 APPNAME = "client"
@@ -51,27 +52,40 @@ def addr(request):
         "eror": error,
         "title": f"всего компов"
     }
-    return render(request, "tables/dirAddr.html", params)
+    return render(request, "tables/Addr.html", params)
 
 
 def getform(request):
     if request.method == 'GET':
         action = request.GET.get("action")
-        if action == "subAddr":
-            form = addFormAddr()
+        if action == "sub":
+            form = addForm(initial={"mac_addr": request.GET.get("mac_addr", "---")})
+        # if action == "subAddr":
+        #     form = addFormAddr()
         # if action == "delAddr":
         #     id = request.GET.get("id", False)
         #     if id:
-        #         obj = dirAddr.objects.get(id=id)
+        #         obj = worker.objects.get(id=id)
         #         form = delFormAddr(instance=obj)
+        #
         # if action == "reAddr":
         #     id = request.GET.get("id", False)
         #     # name = request.GET.get('name', False)
         #     if id:
-        #         obj = dirAddr.objects.get(id=id)
+        #         obj = worker.objects.get(id=id)
         #         form = reFormAddr(instance=obj)
+
+        # if action == "EditUser":
+        #     user_id = request.GET.get("id")
+        #     args = Person.objects.get_person_info(user_id)
+        #     form = UserFormEdit(initial=args)
+        # if action == "DeleteUser":
+        #     user_id = request.GET.get("id")
+        #     args = {"id": user_id}
+        #     form = DeleteUserForm(initial=args)
 
     params = {
         "form": form,
     }
-    return render(request, "index/ForForms/addForm.html", params)
+    return render(request, "index/Addr/add.html", params)
+
