@@ -87,5 +87,5 @@ def getform(request):
     params = {
         "form": form,
     }
-    return render(request, "index/Addr/add.html", params)
+    return render(request, "index/ForForms/addForm.html", params)
 
