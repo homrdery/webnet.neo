@@ -56,6 +56,7 @@ def addr(request):
 
 
 def getform(request):
+    form = None
     if request.method == 'GET':
         action = request.GET.get("action")
         if action == "sub":
