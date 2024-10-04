@@ -31,7 +31,30 @@ class worker(models.Model):
         verbose_name_plural = "Работники"
 
 
+class PktreaderManager(models.Manager):
+    def index_list(self):
+
+        result = []
+        for obj in self.order_by("time"):
+            name = ""
+            try:
+                obj_name = dirAddr.get(mac_addr=obj.mac_adr)
+                name = obj_name.name
+            except:
+                pass
+
+            record = {
+                "time": obj.time,
+                "mac_addr": obj.mac_addr,
+                "ip_addr": obj.ip_addr,
+                "name": name
+            }
+            result.append(record)
+        return result
+
+
 class Pktreader(models.Model):
+    objects = PktreaderManager()
     mac_addr = models.CharField("mac_addr", max_length=32, null=False, blank=False, primary_key=True,
                                 help_text="mac адрес pc")
     ip_addr = models.CharField("ip_addr", max_length=32, null=False, blank=False, help_text="ip адрес pc", default="--")
