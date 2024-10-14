@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from addr.models import dirAddr
-from .forms import addForm, reFormAddr
+from .forms import addForm, reFormAddr, delFormAddr
 import logging
 from addr.models import Pktreader
 
