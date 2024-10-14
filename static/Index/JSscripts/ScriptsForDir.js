@@ -52,7 +52,7 @@ function tableinit () {
                 this.disable();
             },
             action: function readdr( e, dt, node, config )  {
-                var id = $('#myTable').DataTable.$('tr.selected')[0].mac_addr;
+                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
                 console.log('re make user id ='+mac_addr);
                 $("#Form").load("/getform.html?action=reAddr&id="+mac_addr, function(responseTxt, statusTxt, jqXHR)
                 {
