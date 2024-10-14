@@ -24,7 +24,7 @@ def addr(request):
     if request.method == "POST":
         action = request.POST.get("action")
         if action == "delAddr":
-            mac_addr = request.POST.get("mac_addr")
+            mac_addr = str(request.POST.get("mac_addr"))
             try:
                 obj = Pktreader.objects.get(mac_addr=mac_addr)
                 obj.delete()
