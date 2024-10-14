@@ -52,9 +52,9 @@ function tableinit () {
                 this.disable();
             },
             action: function readdr( e, dt, node, config )  {
-                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
-                console.log('re make user id ='+id);
-                $("#Form").load("/getform.html?action=reAddr&id="+id, function(responseTxt, statusTxt, jqXHR)
+                var id = $('#myTable').DataTable.$('tr.selected')[0].mac_addr;
+                console.log('re make user id ='+mac_addr);
+                $("#Form").load("/getform.html?action=reAddr&id="+mac_addr, function(responseTxt, statusTxt, jqXHR)
                 {
                     if(statusTxt == 'success'){
                             $('#addFormdel').modal();
