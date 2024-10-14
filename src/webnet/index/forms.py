@@ -45,7 +45,7 @@ class delFormAddr(forms.ModelForm):
 
     class Meta:
         model = Pktreader
-        fields = '__all__'
+        fields = ('mac_addr', )
 class reFormAddr(forms.ModelForm):
     action = forms.CharField(widget=forms.HiddenInput(), initial="reAddr", required=True)
     id = forms.IntegerField(widget=forms.HiddenInput(), required=True)
