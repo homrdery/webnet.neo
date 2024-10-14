@@ -44,7 +44,7 @@ class delFormAddr(forms.ModelForm):
         self.helper.layout = Layout(Modal(Field('mac_addr', readonly=True), Field('action'), Submit("delete", "Удалить", css_class='btn btn-primery float-end'),  css_id="addFormdel", title=f"""Удалить запись с именем '{self["mac_addr"].value()}?'"""))
 
     class Meta:
-        model = worker
+        model = Pktreader
         fields = '__all__'
 class reFormAddr(forms.ModelForm):
     action = forms.CharField(widget=forms.HiddenInput(), initial="reAddr", required=True)
