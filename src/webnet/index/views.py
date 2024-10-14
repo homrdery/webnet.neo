@@ -64,12 +64,12 @@ def getform(request):
         action = request.GET.get("action")
         if action == "subAddr":
             form = addForm()
-        # if action == "delAddr":
-        #     id = request.GET.get("id", False)
-        #     if id:
-        #         obj = worker.objects.get(id=id)
-        #         form = delFormAddr(instance=obj)
-        #
+        if action == "delAddr":
+            mac_addr = request.GET.get("mac_addr", False)
+            if mac_addr:
+                obj = Pktreader.objects.get(mac_addr=mac_addr)
+                form = delFormAddr(instance=obj)
+
         if action == "reAddr":
             mac_addr = request.GET.get("mac_addr", False)
             # name = request.GET.get('name', False)
