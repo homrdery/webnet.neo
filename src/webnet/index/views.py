@@ -15,7 +15,7 @@ def index(request):
     # from addr.models import PktRecordLog
     # PktRecordLog.objects.compute()
     from addr.models import worker
-    items = worker.objects.index_list()
+    items = worker.objects.all().order_by("id")
     return render(request, 'index/page.html', {"items" : items})
 
 
