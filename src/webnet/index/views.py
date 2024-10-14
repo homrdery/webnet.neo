@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
-from addr.models import dirAddr
+from addr.models import dirAddr, Pktreader
 from .forms import addForm, reFormAddr, delFormAddr
 import logging
 from addr.models import Pktreader
@@ -26,22 +26,22 @@ def addr(request):
         if action == "delAddr":
             mac_addr = request.POST.get("mac_addr")
             try:
-                obj = dirAddr.objects.get(mac_addr=mac_addr)
+                obj = Pktreader.objects.get(mac_addr=mac_addr)
                 obj.delete()
-            except dirAddr.DoesNotExist as e:
+            except Pktreader.DoesNotExist as e:
                 logger.error(f"Не существует {mac_addr}")
         if action == "reAddr":
             try:
 
                 mac_addr = request.POST.get("mac_addr")
-                obj = dirAddr.objects.get(mac_addr=mac_addr)
+                obj = Pktreader.objects.get(mac_addr=mac_addr)
                 form = reFormAddr(request.POST, instance=obj)
                 if form.is_valid():
                     form.save()
                 else:
                     error = form.errors
                     logger.error(error)
-            except dirAddr.DoesNotExist as e:
+            except Pktreader.DoesNotExist as e:
                 logger.error(f"Не существует {mac_addr}")
         if action == "sub":
             form = addForm(request.POST)
