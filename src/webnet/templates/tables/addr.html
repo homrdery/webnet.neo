@@ -16,7 +16,11 @@
                 {{item.time}}
             </td>
             <td>
-                {{item.mac_addr}}
+                {% if item.name %}
+                    {{item.name}}
+                {% else %}
+                    {{item.mac_addr}}
+                {% endif %}
             </td>
             <td>
                 {{item.ip_addr}}
