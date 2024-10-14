@@ -11,21 +11,7 @@ function getform () {
         );
     };
 
-function deladdr( e, dt, node, config )  {
-        var id = $('#myTable').DataTable.$('tr.selected')[0].id;
-        console.log('Выбран пользователь под id ='+id);
-        $("#Form").load("/getform.html?action=delAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
-        {
-            if(statusTxt == 'success'){
-                    $('#addFormdel').modal();
-                }
-                if(statusTxt == 'error'){
-                    alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
 
-                }
-        });
-
-}
 
 function tableinit () {
     var table = $('#myTable').DataTable({
@@ -77,7 +63,21 @@ function tableinit () {
             init: function ( dt, node, config ) {
                 this.disable();
             },
-            action:    deladdr
+            action: function deladdr( e, dt, node, config )  {
+                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
+                console.log('Выбран пользователь под id ='+id);
+                $("#Form").load("/getform.html?action=delAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
+                {
+                    if(statusTxt == 'success'){
+                            $('#addFormdel').modal();
+                        }
+                        if(statusTxt == 'error'){
+                            alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+
+                        }
+                });
+
+        }
 
         }
     ],
