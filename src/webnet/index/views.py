@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from addr.models import dirAddr
-from .forms import addForm
+from .forms import addForm, reFormAddr
 import logging
+from addr.models import Pktreader
+
 # from .forms import delFormAddr, reFormAddr,
 APPNAME = "client"
 logger = logging.getLogger(APPNAME)
@@ -14,7 +16,6 @@ logger = logging.getLogger(APPNAME)
 def index(request):
     # from addr.models import PktRecordLog
     # PktRecordLog.objects.compute()
-    from addr.models import Pktreader
     items = Pktreader.objects.index_list()
     return render(request, 'index/page.html', {"items": items})
 
@@ -69,12 +70,12 @@ def getform(request):
         #         obj = worker.objects.get(id=id)
         #         form = delFormAddr(instance=obj)
         #
-        # if action == "reAddr":
-        #     id = request.GET.get("id", False)
-        #     # name = request.GET.get('name', False)
-        #     if id:
-        #         obj = worker.objects.get(id=id)
-        #         form = reFormAddr(instance=obj)
+        if action == "reAddr":
+            mac_addr = request.GET.get("mac_addr", False)
+            # name = request.GET.get('name', False)
+            if mac_addr:
+                obj = Pktreader.objects.get(mac_addr=mac_addr)
+                form = reFormAddr(instance=obj)
 
         # if action == "EditUser":
         #     user_id = request.GET.get("id")

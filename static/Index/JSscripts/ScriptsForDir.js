@@ -54,7 +54,7 @@ function tableinit () {
             action: function readdr( e, dt, node, config )  {
                 var id = $('#myTable').DataTable.$('tr.selected')[0].id;
                 console.log('re make user id ='+id);
-                $("#Form").load("/getform.html?action=reAddr&id="+id, function(responseTxt, statusTxt, jqXHR)
+                $("#Form").load("/getform.html?action=reAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
                 {
                     if(statusTxt == 'success'){
                             $('#addFormdel').modal();
