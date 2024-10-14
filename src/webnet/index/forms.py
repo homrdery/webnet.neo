@@ -41,7 +41,7 @@ class delFormAddr(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.layout = Layout(Modal(Field('id'), Field('mac_addr', 'name', readonly=True), Field('action'), Submit("delete", "Удалить", css_class='btn btn-primery float-end'),  css_id="addFormdel", title=f"""Удалить запись с именем '{self["name"].value()}?'"""))
+        self.helper.layout = Layout(Modal(Field('mac_addr', readonly=True), Field('action'), Submit("delete", "Удалить", css_class='btn btn-primery float-end'),  css_id="addFormdel", title=f"""Удалить запись с именем '{self["mac_addr"].value()}?'"""))
 
     class Meta:
         model = worker
@@ -52,7 +52,7 @@ class reFormAddr(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.layout = Layout(Modal(Field('mac_addr', 'name'), Field('action'), Submit("edit", "Изменить", css_class='btn btn-primery float-end'),  css_id="addFormdel", title=f"""Изменить запись с именем '{self["name"].value()}'?"""))
+        self.helper.layout = Layout(Modal(Field('mac_addr', 'name'), Field('action'), Submit("edit", "Изменить", css_class='btn btn-primery float-end'),  css_id="addFormdel", title=f"""Изменить запись с именем '{self["mac_addr"].value()}'?"""))
 
     class Meta:
         model = worker
