@@ -55,6 +55,7 @@ class PktreaderManager(models.Manager):
 
 class Pktreader(models.Model):
     objects = PktreaderManager()
+
     mac_addr = models.CharField("mac_addr", max_length=32, null=False, blank=False, primary_key=True,
                                 help_text="mac адрес pc")
     ip_addr = models.CharField("ip_addr", max_length=32, null=False, blank=False, help_text="ip адрес pc", default="--")
