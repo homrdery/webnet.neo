@@ -59,6 +59,7 @@ def addr(request):
     return render(request, "tables/Addr.html", params)
 
 
+
 def getform(request):
     if request.method == 'GET':
         action = request.GET.get("action")
@@ -77,14 +78,6 @@ def getform(request):
                 obj = Pktreader.objects.get(mac_addr=mac_addr)
                 form = reFormAddr(instance=obj)
 
-        # if action == "EditUser":
-        #     user_id = request.GET.get("id")
-        #     args = Person.objects.get_person_info(user_id)
-        #     form = UserFormEdit(initial=args)
-        # if action == "DeleteUser":
-        #     user_id = request.GET.get("id")
-        #     args = {"id": user_id}
-        #     form = DeleteUserForm(initial=args)
 
     params = {
         "form": form,
