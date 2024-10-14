@@ -21,6 +21,7 @@ def index(request):
 
 def addr(request):
     error = ""
+
     if request.method == "POST":
         action = request.POST.get("action")
         if action == "delAddr":
