@@ -18,7 +18,7 @@ new DataTable('#myTable', {
             buttons: [
                 {
                     text: 'Button 1',
-                    action: function (e, dt, node, config) {
+                     action: function (e, dt, node, config) {
                         alert('Button 1 clicked on');
                     }
                 }
@@ -40,7 +40,9 @@ new DataTable('#myTable', {
                 }
             ]
         }
-    }
+    },
+    pageLength: 25,
+
 });
 
 
