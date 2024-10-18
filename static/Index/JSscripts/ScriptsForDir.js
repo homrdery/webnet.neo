@@ -15,7 +15,7 @@ function getform () {
 let table = new DataTable('#myTable', {
     layout: {
         topEnd: null,
-        top:"search",
+        top2Start:"search",
         topStart: {
             buttons: [
                 {
