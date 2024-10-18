@@ -52,13 +52,10 @@
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
             <script>
               $(document).ready(function(){
-                var options1 = {
-                  layout: {
+                let table = new DataTable('#myTable', {layout: {
                     topStart: 'pageLength',
                     topEnd: 'search',
-                  }
-                };
-                let table = new DataTable('#myTable', options1);}
+                  });}
             </script>
           {% endblock %}
           {% block extrajs %}
