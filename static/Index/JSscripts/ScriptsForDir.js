@@ -12,13 +12,39 @@ function getform () {
     };
 
 
-function tableinit () {
-    var table = $('#myTable').DataTable(
-    {
-        Layout: {
-            topStart: 'searcqqqh'
-            }
-    });}
+new DataTable('#myTable', {
+    layout: {
+        topStart: {
+            buttons: [
+                {
+                    text: 'Button 1',
+                    action: function (e, dt, node, config) {
+                        alert('Button 1 clicked on');
+                    }
+                }
+            ]
+        },
+        bottom1Start: {
+            buttons: [
+                {
+                    text: 'Button 2',
+                    action: function (e, dt, node, conf) {
+                        alert('Button 2 clicked on');
+                    }
+                },
+                {
+                    text: 'Button 3',
+                    action: function (e, dt, node, conf) {
+                        alert('Button 3 clicked on');
+                    }
+                }
+            ]
+        }
+    }
+});
+
+
+
 
 
 //function tableinit () {
@@ -102,6 +128,6 @@ function tableinit () {
 //        table.buttons(['#BtDelete']).enable( selectedRows > 0 );
 //    });
 //}
-
-$(tableinit);
-
+//
+//$(tableinit);
+//
