@@ -16,7 +16,7 @@ let table = new DataTable('#myTable', {
     layout: {
         topEnd: null,
         top2Start:"search",
-        topStart: {
+        top1Start: {
             buttons: [
                 {
                     text: 'Button 1',
