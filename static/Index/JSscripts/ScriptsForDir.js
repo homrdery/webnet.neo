@@ -12,10 +12,10 @@ function getform () {
     };
 
 
-function tableinit () {
-    var table = $('#myTable').DataTable({
-    Layout: {topStart: 'searcqqqh'}
-    });}
+//function tableinit () {
+//    var table = $('#myTable').DataTable({
+//    Layout: {topStart: 'searcqqqh'}
+//    });}
 
 
 //function tableinit () {
