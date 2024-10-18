@@ -33,11 +33,11 @@ let table = new DataTable('#myTable', {
                 }
             ]
         },
-        top1Start:["search", 'pageLength', {buttons: [{text:"test"}]}],
+        top1Start:["search", 'pageLength'],
         bottom1Start: {
             buttons: [
                 {
-                    text: 'Button 2',
+                    text:      '<i class="fa fa-pen"></i>',
                     action: function (e, dt, node, conf) {
                         alert('Button 2 clicked on');
                     }
