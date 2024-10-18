@@ -59,14 +59,10 @@
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
             <script>
               $(document).ready(function(){
-                let table = new DataTable('#myTable',{Layout: {topStart: { buttons:[
-                {
-                  text: 'My button',
-                  action: function (e, dt, node, config) {
-                    alert('Button activated');
-                    }
-                }
-                ]},topEnd: 'search'}} );});
+                let table = new DataTable('#myTable',{
+                Layout: {
+                topStart: {
+                    buttons: ['copy',]},topEnd: 'search'}} );});
             </script>
           {% endblock %}
           {% block extrajs %}
