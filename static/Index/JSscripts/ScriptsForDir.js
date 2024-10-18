@@ -15,10 +15,15 @@ function getform () {
 
 function tableinit () {
     var table = $('#myTable').DataTable({
-    Layout: {topEnd: 'search', topStart: {
+    Layout: {topStart: 'search', topEnd: {
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
+            attr:  {
+                title: 'Add item',
+                id: 'BtAdd'
+                },
+            titleAttr: 'Add item',
             action: function ( e, dt, node, config ) {
                 alert( 'Button activated' );
                 }
