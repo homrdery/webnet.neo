@@ -33,7 +33,7 @@ let table = new DataTable('#myTable', {
                 }
             ]
         },
-        top1Start:"search",
+        top1Start:["search", "info"],
         bottom1Start: {
             buttons: [
                 {
