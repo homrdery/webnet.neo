@@ -15,7 +15,7 @@ function getform () {
 
 function tableinit () {
     var table = $('#myTable').DataTable({
-    Layout: {topEnd: 'search', bottomEnd: {
+    Layout: {topEnd: 'search', topStart: {buttons: {
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
@@ -80,7 +80,7 @@ function tableinit () {
         }
 
         }
-    ]}},
+    ]}}},
     pageLength: 25,
     select: true,
     rowId: 'id',
