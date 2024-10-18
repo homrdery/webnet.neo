@@ -60,7 +60,8 @@
             <script>
               $(document).ready(function(){
                 let table = new DataTable('#myTable',{
-                Layout: {topEnd: 'search'}},  buttons: ['copy'] );});
+                Layout: {topEnd: 'search'}},
+                {buttons: ['copy']});});
             </script>
           {% endblock %}
           {% block extrajs %}
