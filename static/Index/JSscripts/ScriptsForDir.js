@@ -14,8 +14,7 @@ function getform () {
 
 
 function tableinit () {
-    var table = $('#myTable').DataTable({
-    dom: 'Bfrtip',
+    new DataTable.Buttons(table, {
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
