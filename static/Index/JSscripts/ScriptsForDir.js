@@ -18,6 +18,10 @@ new DataTable('#myTable', {
             buttons: [
                 {
                     text: 'Button 1',
+                    attr:  {
+                        title: 'Add item',
+                        id: 'BtAdd'
+                     },
                      action: function (e, dt, node, config) {
                         alert('Button 1 clicked on');
                     }
@@ -48,6 +52,13 @@ new DataTable('#myTable', {
         url:"/static/datatables/ru.json"
         }
 });
+
+   table.on( 'select deselect', function () {
+        var selectedRows = table.rows( { selected: true } ).count();
+        table.buttons(['#BtEdit']).enable( selectedRows === 1 );
+        table.buttons(['#BtDelete']).enable( selectedRows > 0 );
+    });
+}
 
 
 
