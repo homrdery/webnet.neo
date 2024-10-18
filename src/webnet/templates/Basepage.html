@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <head>
     {% block meta %}
     <meta charset="utf-8">
@@ -14,6 +14,13 @@
     <link href="/static/datatables/dataTables.dataTables.min.css" rel="stylesheet">
     <link href="/static/main/css/main.css" rel="stylesheet">
     <link href="/static/fontawesomefree/css/all.min.css" rel="stylesheet">
+    <style>
+    .dataTables_filter {
+      width: 50%;
+      float: right;
+      text-align: right;
+    }
+    </style>
     {% endblock %}
 
     {% block extra_headers %}
