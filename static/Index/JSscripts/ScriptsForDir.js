@@ -59,6 +59,7 @@ let table = new DataTable('#myTable', {
 
    table.on( 'select deselect', function () {
         var selectedRows = table.rows( { selected: true } ).count();
+        table.buttons(['#BtAdd']).enable( selectedRows > 0 );
         table.buttons(['#BtEdit']).enable( selectedRows === 1 );
         table.buttons(['#BtDelete']).enable( selectedRows > 0 );
     });
