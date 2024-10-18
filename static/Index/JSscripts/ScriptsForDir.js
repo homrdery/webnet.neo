@@ -12,7 +12,7 @@ function getform () {
     };
 
 
-new DataTable('#myTable', {
+let table = new DataTable('#myTable', {
     layout: {
         topStart: {
             buttons: [
