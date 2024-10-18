@@ -42,7 +42,11 @@ new DataTable('#myTable', {
         }
     },
     pageLength: 25,
-
+    select: true,
+    rowId: 'id',
+    language: {
+        url:"/static/datatables/ru.json"
+        }
 });
 
 
