@@ -94,6 +94,4 @@ function tableinit () {
     });
 }
 
-$(tableinit);
-
 
