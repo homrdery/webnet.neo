@@ -19,11 +19,6 @@ function tableinit () {
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
-            attr:  {
-                title: 'Add item',
-                id: 'BtAdd'
-                },
-            titleAttr: 'Add item',
             action: function ( e, dt, node, config ) {
                 alert( 'Button activated' );
                 }
