@@ -15,7 +15,7 @@ function getform () {
 
 function tableinit () {
     var table = $('#myTable').DataTable({
-    Layout: {topEnd: 'search'}},
+    Layout: {topEnd: 'search'},
     dom: 'Bfrtip',
     buttons: [
         {
@@ -96,4 +96,5 @@ function tableinit () {
     });
 }
 
+$(tableinit);
 
