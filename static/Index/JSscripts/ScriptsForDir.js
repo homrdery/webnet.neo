@@ -58,7 +58,6 @@ new DataTable('#myTable', {
         table.buttons(['#BtEdit']).enable( selectedRows === 1 );
         table.buttons(['#BtDelete']).enable( selectedRows > 0 );
     });
-}
 
 
 
