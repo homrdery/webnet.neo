@@ -18,7 +18,7 @@ let table = new DataTable('#myTable', {
         top2Start: {
             buttons: [
                 {
-                    text: 'Button 1',
+                    text:      '<i class="fa fa-pen"></i>',
 
                     attr:  {
                         title: 'Add item',
@@ -42,7 +42,32 @@ let table = new DataTable('#myTable', {
                         });
 
                     }
-                }
+                },
+                {text:      '<i class="fas fa-trash  aria-hidden="true"></i>',
+            attr:  {
+                title: 'Delete item',
+                id: 'BtDelete'
+            },
+
+            init: function ( dt, node, config ) {
+                this.disable();
+            },
+            action: function deladdr( e, dt, node, config )  {
+                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
+                console.log('Выбран пользователь под id ='+id);
+                $("#Form").load("/getform.html?action=delAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
+                {
+                    if(statusTxt == 'success'){
+                            $('#addFormdel').modal();
+                        }
+                        if(statusTxt == 'error'){
+                            alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+
+                        }
+                });
+
+        }}
+
             ]
         },
         top1Start:["search", 'pageLength'],
