@@ -18,9 +18,13 @@ let table = new DataTable('#myTable', {
             buttons: [
                 {
                     text: 'Button 1',
+
                     attr:  {
                         title: 'Add item',
                         id: 'BtAdd'
+                     },
+                     init: function ( dt, node, config ) {
+                        this.disable();
                      },
                      action: function (e, dt, node, config) {
                         alert('Button 1 clicked on');
