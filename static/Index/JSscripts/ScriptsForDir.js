@@ -80,7 +80,7 @@ function tableinit () {
         }
 
         }
-    ]},
+    ]}},
     pageLength: 25,
     select: true,
     rowId: 'id',
