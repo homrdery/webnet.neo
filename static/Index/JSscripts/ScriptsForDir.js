@@ -14,7 +14,7 @@ function getform () {
 
 function tableinit () {
     var table = $('#myTable').DataTable({
-    Layout: {topStart: 'search'}
+    Layout: {topStart: 'searcqqqh'}
     });}
 
 
