@@ -27,8 +27,20 @@ let table = new DataTable('#myTable', {
                      init: function ( dt, node, config ) {
                         this.disable();
                      },
-                     action: function (e, dt, node, config) {
-                        alert('Button 1 clicked on');
+                    action: function readdr( e, dt, node, config )  {
+                        var id = $('#myTable').DataTable.$('tr.selected')[0].id;
+                        console.log('re make user id ='+id);
+                        $("#Form").load("/getform.html?action=reAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
+                        {
+                            if(statusTxt == 'success'){
+                                    $('#addFormdel').modal();
+                                }
+                                if(statusTxt == 'error'){
+                                    alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+
+                                }
+                        });
+
                     }
                 }
             ]
