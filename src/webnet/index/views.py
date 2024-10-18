@@ -56,6 +56,7 @@ def addr(request):
         "eror": error,
         "title": f"всего компов"
     }
+
     return render(request, "tables/Addr.html", params)
 
 
