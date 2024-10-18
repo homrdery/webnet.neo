@@ -59,12 +59,8 @@
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
             <script>
               $(document).ready(function(){
-                let table = new DataTable('#myTable',{
-                Layout: {topStart: 'buttons', topEnd: 'search'}},
-                );
-                new Datatable.Buttons('#myTable', {buttons: ['copy', 'excel', 'pdf']});
-                table.buttons().container()
-                  .appendTo( '#toolbar' );});
+                let table = new DataTable('#myTable');
+              });
             </script>
           {% endblock %}
           {% block extrajs %}

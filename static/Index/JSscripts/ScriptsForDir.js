@@ -14,7 +14,9 @@ function getform () {
 
 
 function tableinit () {
-    table, {
+    var table = $('#myTable').DataTable({
+    Layout: {topEnd: 'search'}},
+    dom: 'Bfrtip',
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
