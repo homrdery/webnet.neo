@@ -14,7 +14,7 @@ function getform () {
 
 
 function tableinit () {
-    new DataTable.Buttons(table, {
+    DataTable.Buttons(table, {
     buttons: [
         {
             text:      '<i class="fa fa-plus"></i>',
