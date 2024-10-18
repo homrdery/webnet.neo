@@ -59,7 +59,66 @@
             <script type="text/javascript" charset="utf8" src="/static/datatables/dataTables.select.min.js"></script>
             <script>
               $(document).ready(function(){
-                let table = new DataTable('#myTable', {Layout: {topEnd: 'search'}} );
+                let table = new DataTable('#myTable', buttons: [        {
+            text:      '<i class="fa fa-pen"></i>',
+            attr:  {
+                title: 'Edit item',
+                id: 'BtEdit'
+                },
+            init: function ( dt, node, config ) {
+                this.disable();
+            },
+            action: function readdr( e, dt, node, config )  {
+                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
+                console.log('re make user id ='+id);
+                $("#Form").load("/getform.html?action=reAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
+                {
+                    if(statusTxt == 'success'){
+                            $('#addFormdel').modal();
+                        }
+                        if(statusTxt == 'error'){
+                            alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+
+                        }
+                });
+
+            }
+        },
+        {
+            text:      '<i class="fas fa-trash  aria-hidden="true"></i>',
+            attr:  {
+                title: 'Delete item',
+                id: 'BtDelete'
+            },
+
+            init: function ( dt, node, config ) {
+                this.disable();
+            },
+            action: function deladdr( e, dt, node, config )  {
+                var id = $('#myTable').DataTable.$('tr.selected')[0].id;
+                console.log('Выбран пользователь под id ='+id);
+                $("#Form").load("/getform.html?action=delAddr&mac_addr="+id, function(responseTxt, statusTxt, jqXHR)
+                {
+                    if(statusTxt == 'success'){
+                            $('#addFormdel').modal();
+                        }
+                        if(statusTxt == 'error'){
+                            alert('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+
+                        }
+                });
+
+        }
+
+        }
+    ],
+    pageLength: 25,
+    select: true,
+    rowId: 'id',
+    language: {
+        url:"/static/datatables/ru.json"
+        },
+},{Layout: {topEnd: 'search'}} );
                 });
             </script>
           {% endblock %}
