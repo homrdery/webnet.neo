@@ -62,7 +62,7 @@
                 let table = new DataTable('#myTable',{
                 Layout: {topStart: 'buttons', topEnd: 'search'}},
                 );
-                new Datatable.Buttons(table, {buttons: ['copy', 'excel', 'pdf']});});
+                new Datatable.Buttons('#myTable', {buttons: ['copy', 'excel', 'pdf']});});
             </script>
           {% endblock %}
           {% block extrajs %}
