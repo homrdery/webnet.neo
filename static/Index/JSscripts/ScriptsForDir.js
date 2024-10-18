@@ -33,7 +33,7 @@ let table = new DataTable('#myTable', {
                 }
             ]
         },
-        bottom1Start: ["search",
+        bottom1Start: {
             buttons: [
                 {
                     text: 'Button 2',
@@ -48,7 +48,7 @@ let table = new DataTable('#myTable', {
                     }
                 }
             ]
-        ]
+        }
     },
     pageLength: 25,
     select: true,
