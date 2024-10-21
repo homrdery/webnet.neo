@@ -1,0 +1,26 @@
+            <table width="80%" border="1" id="myTable">
+            <thead>
+            <tr>
+                <th>MAC адрес</th>
+                <th>адрес</th>
+                <th>Время</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr align="center">
+
+                    <td  align="right">
+                        <button onclick='getform("{{item.mac_addr}}");'>{{item.mac_addr}}</button>
+
+                    </td>
+                    <td>
+                        {{item.ip_addr}}
+                    </td>
+                    <td>
+                        {{item.time}}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
