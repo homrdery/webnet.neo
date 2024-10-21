@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from addr.models import Pktreader, worker
 # Create your views here.
 def logs(request):
     error = ""
@@ -18,7 +18,7 @@ def logs(request):
     params = {
         "names": names,
         "items": items,
-        "error":error,
+        "error": error,
 
         "title": f"всего компов"
     }
