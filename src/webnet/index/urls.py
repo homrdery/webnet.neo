@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib import admin
 from index import views
-
+from logs import views
 urlpatterns = [
     path('', views.index),
     path('Addr.html', views.addr),
