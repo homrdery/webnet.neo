@@ -70,7 +70,6 @@ let table = new DataTable('#myTable', {
 
             ]
         },
-        top1Start:['pageLength'],
 
     },
     pageLength: 25,
