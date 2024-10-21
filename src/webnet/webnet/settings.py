@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "index",
     "addr",
     "accounts",
+    "DirPktreader",
     "tester",
     "fontawesomefree",
     "crispy_forms",
