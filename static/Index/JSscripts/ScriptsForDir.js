@@ -14,7 +14,7 @@ function getform () {
 
 let table = new DataTable('#myTable', {
     layout: {
-        topEnd: null,
+        topEnd: "search",
         top2Start: {
             buttons: [
                 {
@@ -70,7 +70,7 @@ let table = new DataTable('#myTable', {
 
             ]
         },
-        top1Start:["search", 'pageLength'],
+        top1Start:['pageLength'],
 
     },
     pageLength: 25,
