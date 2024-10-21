@@ -71,7 +71,7 @@ let table = new DataTable('#myTable', {
             ]
         },
         top1Start:["search", 'pageLength'],
-        },
+
     },
     pageLength: 25,
     select: true,
