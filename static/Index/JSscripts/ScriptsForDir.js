@@ -71,14 +71,14 @@ let table = new DataTable('#myTable', {
             ]
         },
         top1Start:["search", 'pageLength'],
-        }
+        },
     },
     pageLength: 25,
     select: true,
     rowId: 'id',
     language: {
         url:"/static/datatables/ru.json"
-        }
+        },
 });
 
    table.on( 'select deselect', function () {
