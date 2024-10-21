@@ -71,21 +71,6 @@ let table = new DataTable('#myTable', {
             ]
         },
         top1Start:["search", 'pageLength'],
-        bottom1Start: {
-            buttons: [
-                {
-                    text:      '<i class="fa fa-pen"></i>',
-                    action: function (e, dt, node, conf) {
-                        alert('Button 2 clicked on');
-                    }
-                },
-                {
-                    text: 'Button 3',
-                    action: function (e, dt, node, conf) {
-                        alert('Button 3 clicked on');
-                    }
-                }
-            ]
         }
     },
     pageLength: 25,
