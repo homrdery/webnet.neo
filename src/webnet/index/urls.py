@@ -6,6 +6,6 @@ urlpatterns = [
     path('', views.index),
     path('Addr.html', views.addr),
     path('getform.html', views.getform),
-    path('logs', views.getform),
+    path('logs', views.logs),
 
 ]
